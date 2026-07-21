@@ -1,6 +1,9 @@
 # Sample/reference data, not part of the app
 Example/
 
+# Service account keys / secrets (root-level only; frontend/backend keep their own .json files)
+/*.json
+
 # OS
 .DS_Store
 Thumbs.db
