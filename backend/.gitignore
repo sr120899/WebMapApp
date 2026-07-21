@@ -9,6 +9,9 @@ dist/
 *.egg-info/
 .eggs/
 
+# Frontend build output, copied in by frontend's postbuild script
+app/static/
+
 # Virtual environments
 venv/
 .venv/
