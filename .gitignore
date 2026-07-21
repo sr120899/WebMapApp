@@ -1,0 +1,6 @@
+# Sample/reference data, not part of the app
+Example/
+
+# OS
+.DS_Store
+Thumbs.db
