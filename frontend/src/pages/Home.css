@@ -1,0 +1,127 @@
+.home {
+  position: fixed;
+  inset: 0;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+  padding: 3rem 1.5rem;
+  background: radial-gradient(ellipse at 20% 20%, #1b1240 0%, transparent 55%),
+    radial-gradient(ellipse at 80% 0%, #0c2a4a 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 100%, #2a0f3d 0%, transparent 55%),
+    #05060f;
+  color: #e8e6ff;
+  text-align: center;
+}
+
+.home::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(1.5px 1.5px at 10% 20%, #fff, transparent),
+    radial-gradient(1.5px 1.5px at 75% 15%, #fff, transparent),
+    radial-gradient(1px 1px at 90% 60%, #fff, transparent),
+    radial-gradient(1px 1px at 30% 80%, #fff, transparent),
+    radial-gradient(1.5px 1.5px at 55% 45%, #fff, transparent),
+    radial-gradient(1px 1px at 15% 55%, #fff, transparent),
+    radial-gradient(1px 1px at 65% 90%, #fff, transparent),
+    radial-gradient(1.5px 1.5px at 85% 35%, #fff, transparent);
+  background-repeat: repeat;
+  background-size: 600px 600px;
+  opacity: 0.6;
+  animation: twinkle 4s ease-in-out infinite alternate;
+}
+
+@keyframes twinkle {
+  from {
+    opacity: 0.35;
+  }
+  to {
+    opacity: 0.8;
+  }
+}
+
+.home__content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+  max-width: 640px;
+}
+
+.home__title {
+  margin: 0;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 700;
+  letter-spacing: -1px;
+  background: linear-gradient(90deg, #7ee8fa 0%, #a78bfa 50%, #f472b6 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 40px rgba(167, 139, 250, 0.35);
+}
+
+.home__subtitle {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #b8b4d9;
+  line-height: 1.6;
+}
+
+.home__nav {
+  display: grid;
+  gap: 1rem;
+  width: 100%;
+  list-style: none;
+  padding: 0;
+}
+
+.home__button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 1rem 1.5rem;
+  border-radius: 14px;
+  border: 1px solid rgba(167, 139, 250, 0.35);
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(6px);
+  color: #f1f0ff;
+  font-size: 1.05rem;
+  font-weight: 600;
+  text-decoration: none;
+  overflow: hidden;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.home__button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, rgba(126, 232, 250, 0.15), rgba(167, 139, 250, 0.15), rgba(244, 114, 182, 0.15));
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.home__button:hover,
+.home__button:focus-visible {
+  transform: translateY(-3px);
+  border-color: rgba(167, 139, 250, 0.9);
+  box-shadow: 0 10px 30px rgba(126, 100, 250, 0.35);
+  outline: none;
+}
+
+.home__button:hover::before,
+.home__button:focus-visible::before {
+  opacity: 1;
+}
+
+.home__button-label {
+  position: relative;
+}
