@@ -54,7 +54,7 @@ function LeafletExample() {
       attribution: '&copy; OpenStreetMap contributors',
     }).addTo(map)
 
-    fetch('/data/thailand-provinces.geojson')
+    fetch(`${import.meta.env.BASE_URL}data/thailand-provinces.geojson`)
       .then((res) => res.json())
       .then((geojson: GeoJSON.FeatureCollection) => {
         const layers: Record<string, L.Polygon> = {}

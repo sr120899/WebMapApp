@@ -59,7 +59,7 @@ function CesiumExample() {
       if (englishName) applySelection(englishName)
     })
 
-    Cesium.GeoJsonDataSource.load('/data/thailand-provinces.geojson', {
+    Cesium.GeoJsonDataSource.load(`${import.meta.env.BASE_URL}data/thailand-provinces.geojson`, {
       stroke: DEFAULT_OUTLINE,
       fill: DEFAULT_FILL,
       strokeWidth: 1.5,

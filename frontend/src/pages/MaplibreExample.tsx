@@ -61,7 +61,7 @@ function MaplibreExample() {
     map.addControl(new maplibregl.NavigationControl(), 'top-right')
 
     map.on('load', () => {
-      fetch('/data/thailand-provinces.geojson')
+      fetch(`${import.meta.env.BASE_URL}data/thailand-provinces.geojson`)
         .then((res) => res.json())
         .then((geojson: GeoJSON.FeatureCollection) => {
           const byProvince: Record<string, ProvinceFeature> = {}
